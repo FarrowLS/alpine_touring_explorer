@@ -1,15 +1,7 @@
 var express = require('express'),
     router = express.Router(),
-    ctrlMain = require('../controllers/main'),
     ctrlLocations = require('../controllers/locations'),
     ctrlComments = require('../controllers/comments');
-
-/* TO BE REMOVED */
-var homepageController = function (req, res) {
-    res.render('index', { title: 'Express' });
-};
-/* GET home page. - TO BE REMOVED */
-router.get('/', ctrlMain.index);
 
 router.get('/locations', ctrlLocations.locationsList);
 router.post('/locations', ctrlLocations.locationsCreate);

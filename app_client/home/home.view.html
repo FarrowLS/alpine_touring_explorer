@@ -1,0 +1,26 @@
+
+<div class="row">
+    <div class="col-xs-12 col-sm-8">
+        <h3>{{ vm.pageHeader.title }}</h3>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12 col-sm-8">
+        [filter goes here]<br />
+        <div class="text-primary">{{ vm.message }}</div>
+
+
+    </div>
+</div>
+
+ <div class="row">
+    <div class="col-xs-12 col-sm-8" ng-repeat="location in vm.data.locations"> 
+        <hr />
+        <h4>{{ location.name }}</h4> 
+        <div>[distance from where you are]</div>
+        <div>{{ location.address }}</div>
+        <div>{{ location.terrain }}</div>
+
+    </div>
+</div>
