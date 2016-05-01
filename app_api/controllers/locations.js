@@ -10,12 +10,14 @@ module.exports.locationsList = function (req, res) {
 
     var lng = parseFloat(req.query.lng),
         lat = parseFloat(req.query.lat),
-        maxDistance = parseFloat(req.query.maxDistance) || parseFloat(10000000000.00);
+        maxDistance = parseFloat(req.query.maxDistance) || parseFloat(10000000000.00),
+        userCoords = true;
 
     if (!(lng && lat) || !(lng || lat)) {
         // Set Worcester, MA as center of map - lng: -71.8405449, lat: 42.2757946
         lng = parseFloat(-71.8405449);
         lat = parseFloat(42.2757946);
+        userCoords = false;
     }
 
     var point = {
@@ -36,13 +38,24 @@ module.exports.locationsList = function (req, res) {
             sendJSONresponse(res, 404, err);
         } else {
             results.forEach(function (result) {
-                locations.push({
-                    name: result.obj.name,
-                    _id: result.obj._id,
-                    address: result.obj.address,
-                    terrain: result.obj.terrain,
-                    distance: theEarth.getDistanceFromRads(result.dis),
-                });
+                // IF statement is use to determine if users location is known and 
+                // distance to location can be provided
+                if (userCoords) {
+                    locations.push({
+                        name: result.obj.name,
+                        _id: result.obj._id,
+                        address: result.obj.address,
+                        terrain: result.obj.terrain,
+                        distance: theEarth.getDistanceFromRads(result.dis),
+                    });
+                } else {
+                    locations.push({
+                        name: result.obj.name,
+                        _id: result.obj._id,
+                        address: result.obj.address,
+                        terrain: result.obj.terrain,
+                    });
+                }
             });
             sendJSONresponse(res, 200, locations);
         }
