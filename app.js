@@ -25,8 +25,11 @@ app.use(require('less-middleware')(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'app_client')));
 
-app.use('/', routes);
+// app.use('/', routes); // Server side rendering has been removed. The code is being kept for future server side rendering of front end apps (ex. Angular 2)
 app.use('/api', routesApi);
+app.use(function (req, res) {
+  res.sendfile(path.join(__dirname, 'app_client', 'index.html'));
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
