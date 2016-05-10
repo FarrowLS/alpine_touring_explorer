@@ -1,5 +1,6 @@
 (function () {
-    angular.module('ateApp', ['ngRoute']);
+    angular
+        .module('ateApp', ['ngRoute']);
 
     function config ($routeProvider, $locationProvider) {
         $routeProvider

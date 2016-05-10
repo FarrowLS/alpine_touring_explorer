@@ -10,29 +10,12 @@
         <base href="/"></base>
     </head>
     <body>
-        <div class="navbar navbar-default navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="/">Alpine Touring Explorer</a>
-                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <div id="navbar-main" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li>
-                            <a href="/#about">About</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        <navigation></navigation>
         <div class="container">
             <div ng-view>
 
             </div>
+            <ate-footer></ate-footer>
         </div>
     </body>
     <script type="text/javascript" src="/angular/angular.js"></script>
@@ -42,6 +25,8 @@
     <script type="text/javascript" src="/about/about.controller.js"></script>
     <script type="text/javascript" src="/common/services/ateData.service.js"></script>
     <script type="text/javascript" src="/common/services/geolocation.service.js"></script>
+    <script type="text/javascript" src="/common/directives/ateFooter/ateFooter.directive.js"></script>
+    <script type="text/javascript" src="/common/directives/navigation/navigation.directive.js"></script>
     <script type="text/javascript" src="/common/filters/formatDistance.filter.js"></script>
     <script type="text/javascript" src="/javascripts/jquery-1.12.2.min.js"></script>
     <script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script>

@@ -11,7 +11,7 @@ module.exports.locationsList = function (req, res) {
     var lng = parseFloat(req.query.lng),
         lat = parseFloat(req.query.lat),
         maxDistance = parseFloat(req.query.maxDistance) || parseFloat(10000000000.00),
-        userCoords = true;
+        userCoords = false; // To be updated when distance display is updated
 
     if (!(lng && lat) || !(lng || lat)) {
         // Set Worcester, MA as center of map - lng: -71.8405449, lat: 42.2757946
