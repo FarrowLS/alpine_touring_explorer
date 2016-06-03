@@ -9,26 +9,19 @@
         <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
         <base href="/"></base>
     </head>
-    <body>
-        <navigation></navigation>
-        <div class="container">
-            <div ng-view>
-
-            </div>
-            <ate-footer></ate-footer>
-        </div>
+    <body ng-view>
+        <script type="text/javascript" src="/angular/angular.js"></script>
+        <script type="text/javascript" src="/lib/angular-route.min.js"></script>
+        <script type="text/javascript" src="/app.js"></script>
+        <script type="text/javascript" src="/home/home.controller.js"></script>
+        <script type="text/javascript" src="/about/about.controller.js"></script>
+        <script type="text/javascript" src="/common/services/ateData.service.js"></script>
+        <script type="text/javascript" src="/common/services/geolocation.service.js"></script>
+        <script type="text/javascript" src="/common/directives/ateFooter/ateFooter.directive.js"></script>
+        <script type="text/javascript" src="/common/directives/navigation/navigation.directive.js"></script>
+        <script type="text/javascript" src="/common/directives/pageHeader/pageHeader.directive.js"></script>
+        <script type="text/javascript" src="/common/filters/formatDistance.filter.js"></script>
+        <script type="text/javascript" src="/javascripts/jquery-1.12.2.min.js"></script>
+        <script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script>
     </body>
-    <script type="text/javascript" src="/angular/angular.js"></script>
-    <script type="text/javascript" src="/lib/angular-route.min.js"></script>
-    <script type="text/javascript" src="/app.js"></script>
-    <script type="text/javascript" src="/home/home.controller.js"></script>
-    <script type="text/javascript" src="/about/about.controller.js"></script>
-    <script type="text/javascript" src="/common/services/ateData.service.js"></script>
-    <script type="text/javascript" src="/common/services/geolocation.service.js"></script>
-    <script type="text/javascript" src="/common/directives/ateFooter/ateFooter.directive.js"></script>
-    <script type="text/javascript" src="/common/directives/navigation/navigation.directive.js"></script>
-    <script type="text/javascript" src="/common/filters/formatDistance.filter.js"></script>
-    <script type="text/javascript" src="/javascripts/jquery-1.12.2.min.js"></script>
-    <script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script>
-    
 </html>
